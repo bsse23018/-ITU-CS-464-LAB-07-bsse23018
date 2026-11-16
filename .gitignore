@@ -107,3 +107,20 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Lab 07: keep only the menu project. Old assignment content stays local.
+/Assets/Synty*
+/Assets/Raptor3D*
+/Assets/Helicopter*
+/Assets/Materials*
+/Assets/Physics*
+/Assets/Prefabs*
+/Assets/Scenes*
+/Assets/TutorialInfo*
+/Assets/Readme.asset*
+/Assets/*.cs
+/Assets/*.cs.meta
+/Docs/
+/Capture/
+*.mp4
+UpgradeLog*.htm
