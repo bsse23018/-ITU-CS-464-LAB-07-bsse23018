@@ -2,7 +2,10 @@
 
 Unity **6000.3.24f1**, uGUI + TextMeshPro. Portrait 1080x1920 canvas, anchored layout, safe-area aware.
 Run: open the project, open `Assets/Lab07/Scenes/Menu.unity`, press Play (Game view: portrait / 1080x1920).
-Demo video: _add link here_
+## Demo Video
+- [Watch / Download Demo Video (lab7_recording.mp4)](lab7_recording.mp4)
+
+<video src="lab7_recording.mp4" width="360" controls></video>
 
 ## Screens and flow
 Title -> Main Menu -> Mode Select -> Level Select -> (short play) -> Pause / Results.
@@ -25,11 +28,34 @@ Design notes (applied on every screen): one primary button per screen (cyan, lar
 text >= 36 px, touch targets >= 120 px, 40 px side margins, same header (Back left, title, coins right), state shown by colour + icon/label
 (lock icon, check mark, ON/OFF text, filled vs outline stars) so it still reads in greyscale.
 
-## Screenshots (colour, annotated, greyscale)
-Put images in `docs/screens/` named `NN-name-colour.png`, `NN-name-annotated.png`, `NN-name-greyscale.png`.
-Use `Lab07 > Capture Screenshots` (Unity menu) to save colour PNGs to `Capture/shots`, then desaturate a copy (Saturation 0).
+## Screenshots
 
-_TODO: add the 10 sections with images here._
+### Main Menu
+![Main Menu](Docs/screens/01-main-menu.png)
+
+### Mode Select
+![Mode Select](Docs/screens/02-mode-select.png)
+
+### Level Select
+![Level Select](Docs/screens/03-level-select.png)
+
+### Hangar
+![Hangar](Docs/screens/04-hangar.png)
+
+### Shop - Boosts
+![Shop - Boosts](Docs/screens/05-shop-boosts.png)
+
+### Shop - Skins
+![Shop - Skins](Docs/screens/06-shop-skins.png)
+
+### Shop - Coins
+![Shop - Coins](Docs/screens/07-shop-coins.png)
+
+### Settings
+![Settings](Docs/screens/08-settings.png)
+
+### Gameplay
+![Gameplay](Docs/screens/09-gameplay.png)
 
 ## Credits
 - Code: BSSE23018, written with Claude Code assistance.

@@ -120,7 +120,9 @@ InitTestScene*.unity*
 /Assets/Readme.asset*
 /Assets/*.cs
 /Assets/*.cs.meta
-/Docs/
+/Docs/*
+!/Docs/screens/
 /Capture/
 *.mp4
+!lab7_recording.mp4
 UpgradeLog*.htm
