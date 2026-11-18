@@ -1,4 +1,4 @@
-# NOVA RUSH - Lab 07 Mobile Menu System (ITU CS-464)
+# Tayyab RUSH - Lab 07 Mobile Menu System (ITU CS-464)
 
 Unity **6000.3.24f1**, uGUI + TextMeshPro. Portrait 1080x1920 canvas, anchored layout, safe-area aware.
 Run: open the project, open `Assets/Lab07/Scenes/Menu.unity`, press Play (Game view: portrait / 1080x1920).
@@ -57,7 +57,3 @@ text >= 36 px, touch targets >= 120 px, 40 px side margins, same header (Back le
 ### Gameplay
 ![Gameplay](Docs/screens/09-gameplay.png)
 
-## Credits
-- Code: BSSE23018, written with Claude Code assistance.
-- Visual inspiration only (no assets): Subway Surfers (menu layout), Geometry Dash (neon palette), Angry Birds (star results).
-- Icons and shapes are generated in code. Font: Liberation Sans (SIL OFL) from TextMeshPro. No audio, no third-party or AI-generated images.
