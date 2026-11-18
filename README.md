@@ -28,6 +28,35 @@ Design notes (applied on every screen): one primary button per screen (cyan, lar
 text >= 36 px, touch targets >= 120 px, 40 px side margins, same header (Back left, title, coins right), state shown by colour + icon/label
 (lock icon, check mark, ON/OFF text, filled vs outline stars) so it still reads in greyscale.
 
+## 📱 How to Create Mobile Build (Android APK)
+
+> [!IMPORTANT]
+> The game is designed for mobile portrait orientation (**1080x1920**) with safe-area anchors. Follow these steps to generate the Android `.apk`.
+
+### Step 1: Install Android Build Support (if not installed)
+1. Open **Unity Hub** -> Navigate to **Installs**.
+2. Find **Unity 6000.3.24f1** and click the **Gear Icon (⚙️)** -> **Add Modules**.
+3. Check **Android Build Support** (and verify **Android SDK & NDK Tools** + **OpenJDK** are selected).
+4. Click **Install** and wait for completion.
+
+### Step 2: Configure & Build APK in Unity
+1. Open the project in Unity.
+2. Open **File** > **Build Settings** (`Ctrl + Shift + B`) or **Build Profiles**.
+3. In **Scenes in Build**, ensure `Assets/Lab07/Scenes/Menu.unity` is added and checked.
+4. Select **Android** under Platform and click **Switch Platform**.
+5. Click **Player Settings...** (bottom left):
+   - **Resolution and Presentation**:
+     - **Default Orientation**: Set to `Portrait`.
+   - **Other Settings**:
+     - **Identification > Package Name**: e.g., `com.itu.tayyabrush`
+     - **Minimum API Level**: Android 8.0 (API Level 26) or higher.
+     - **Scripting Backend**: `IL2CPP` (recommended for ARM64) or `Mono` (for fast debug builds).
+     - **Target Architectures**: Select `ARM64` and `ARMv7`.
+6. Return to Build Settings and click **Build** (or **Build and Run** with a connected device).
+7. Choose your output folder (e.g., `Builds/`) and save as `TayyabRush.apk`.
+
+---
+
 ## Screenshots
 
 ### Main Menu
