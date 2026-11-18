@@ -37,6 +37,15 @@ namespace Lab07.EditorTools
             else if (cmd == "video") Run("video");
             else if (cmd == "stop") EditorApplication.isPlaying = false;
             else if (cmd == "ping") Log("pong playing=" + EditorApplication.isPlaying + " paused=" + EditorApplication.isPaused + " focused=" + UnityEditorInternal.InternalEditorUtility.isApplicationActive);
+            else if (cmd == "checkandroid")
+            {
+                bool supported = BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.Android, BuildTarget.Android);
+                Log("android supported=" + supported);
+            }
+            else if (cmd == "buildapk")
+            {
+                BuildApk();
+            }
             else if (cmd == "refresh") { AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate); Log("refresh"); }
         }
 
@@ -55,6 +64,31 @@ namespace Lab07.EditorTools
 
         [MenuItem("Lab07/Capture Screenshots")] static void Shots() { Run("shots"); }
         [MenuItem("Lab07/Record Demo Frames")] static void Video() { Run("video"); }
+
+        [MenuItem("Lab07/Build Android APK")]
+        public static void BuildApk()
+        {
+            if (!BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.Android, BuildTarget.Android))
+            {
+                Log("ERROR: Android build support is not installed in this Unity editor.");
+                return;
+            }
+            if (!File.Exists(ScenePath)) MakeScene();
+            Directory.CreateDirectory("Builds");
+            string outPath = Path.GetFullPath("Builds/TayyabRush.apk");
+            PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android, "com.itu.tayyabrush");
+            PlayerSettings.productName = "Tayyab Rush";
+            PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;
+            BuildPlayerOptions opt = new BuildPlayerOptions
+            {
+                scenes = new[] { ScenePath },
+                locationPathName = outPath,
+                target = BuildTarget.Android,
+                options = BuildOptions.None
+            };
+            var report = BuildPipeline.BuildPlayer(opt);
+            Log("build finished: summary=" + report.summary.result + " path=" + outPath);
+        }
 
         static void Run(string mode)
         {
